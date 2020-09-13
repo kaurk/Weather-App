@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Weather App</title>
+    <meta charset="UTF-8" />
+    <link href="src/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="weather-app-wrapper">
+        <div class="weather-app">
+          <section class="three-cities">
+            <div class="row row-cols-3">
+              <div class="col">New Delhi</div>
+              <div class="col">Zürich</div>
+              <div class="col">New York</div>
+            </div>
+          </section>
+
+          <form id="search-city">
+            <input type="text" placeholder="Enter a city 🌍" autocomplete="off" autofocus="on" id="search-box-input" />
+            <button type="submit" id="search-button">
+                Search🔍
+            </button>
+           </form>
+          <button class="current" id="search-current-temp">
+          Current
+          </button>
+           <div class="info">
+            <h1 id="location">
+              Zürich
+            </h1>
+            <ul id="display-date">
+              <li>Monday,17Aug 09:45</li>
+              <li>Partly Cloudy</li>
+              
+            </ul>
+            <div class="row">
+                <div class="col-6">
+                  <div class="clearfix weather-temperature">
+                    <img
+                      src="https://cdn3.iconfinder.com/data/icons/weather-344/142/sunny-256.png"
+                      class="float-left" alt="cloudy icon"
+                      id="icon"
+                    />
+                   <h5 id="calc-temp"> 
+                  9°C
+                </h5> 
+                    <a href="#" id="fromc">°C </a> /
+                    <a href="#" id="toC">°F</a>
+                  
+                  
+                  
+                   
+                  </div>
+                </div>
+                    <div class="col-6">
+                        <ul>
+                          <li>Humidity: 78%</li>
+                          <li>Wind:6km/h</li>
+                          <li>Chance of rain:3%</li>
+                        </ul>
+                      </div>
+                      <div class="row weather-forcast">
+                          <div class="col-2">
+                            <h3>
+                              Tue
+                            </h3>
+                            <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" />
+                            <div class="weather-forcast-temperature">
+                              <strong>22°</strong> 17°
+                            </div>
+                          </div>
+                          <div class="col-2">
+                              <h3>
+                               Wed
+                              </h3>
+                              <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" />
+                              <div class="weather-forcast-temperature">
+                                <strong>22°</strong> 17°
+                              </div>
+                            </div>
+                            <div class="col-2">
+                                <h3>
+                                  Thu
+                                </h3>
+                                <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" />
+                                <div class="weather-forcast-temperature">
+                                  <strong>22°</strong> 17°
+                                </div>
+                              </div>
+                              <div class="col-2">
+                                  <h3>
+                                    Fri
+                                  </h3>
+                                  <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" />
+                                  <div class="weather-forcast-temperature">
+                                    <strong>22°</strong> 17°
+                                  </div>
+                                </div>
+
+                                <div class="col-2">
+                                    <h3>
+                                      Sat
+                                    </h3>
+                                    <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" />
+                                    <div class="weather-forcast-temperature">
+                                      <strong>22°</strong> 17°
+                                    </div>
+                                  </div>
+                                  <div class="col-2">
+                                      <h3>
+                                        Sun
+                                      </h3>
+                                      <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" />
+                                      <div class="weather-forcast-temperature">
+                                        <strong>22°</strong> 17°
+                                      </div>
+                                    </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="src/index.js"></script>
+  </body>
+</html>
