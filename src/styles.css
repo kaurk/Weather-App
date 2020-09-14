@@ -86,3 +86,9 @@ button.current {
   margin-left: auto;
   margin-right: auto;
 }
+
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+}
