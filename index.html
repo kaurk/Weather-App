@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Weather App</title>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link
       rel="stylesheet"
@@ -18,19 +19,11 @@
     <div class="container">
       <div class="weather-app-wrapper">
         <div class="weather-app">
-          <section class="three-cities">
-            <div class="row row-cols-3">
-              <div class="col">New Delhi</div>
-              <div class="col">Zürich</div>
-              <div class="col">New York</div>
-            </div>
-          </section>
-
           <form id="search-city" class="mb-3">
             <div class="row">
               <div class="col-10">
                 <input
-                  type="text"
+                  type="search"
                   placeholder="Enter a city 🌍"
                   autocomplete="off"
                   autofocus="on"
@@ -57,7 +50,7 @@
             <div class="row">
               <div class="col-6">
                 <div class="clearfix weather-temperature">
-                  <img src="" class="float-left" alt="" id="icon" />
+                  <img src="" class="float-left" alt="Clear" id="icon" />
                   <div class="float-left">
                     <strong class="temperature" id="temperature"></strong>
                     <span class="units">
@@ -75,17 +68,19 @@
                 </ul>
               </div>
             </div>
-            <div class=" weather-forcast" id="forecast"></div>
+            <div class="weather-forcast" id="forecast"></div>
           </div>
-            
+        </div>
 
-    <footer>
-      <a href="https://github.com/kaurk/Weather-App" target="_blank"
-        >Open-source code 
-      </a>
+        <footer>
+          <a href="https://github.com/kaurk/Weather-App" target="_blank"
+            >Open-source code
+          </a>
+          by Kamaljit Kaur
+        </footer>
+      </div>
+    </div>
 
-       by Kamaljit Kaur
-    </footer>
     <script src="src/index.js"></script>
   </body>
 </html>
