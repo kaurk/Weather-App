@@ -35,7 +35,7 @@ function displayWeatherInfo(response) {
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
 
-  celsiusTemp = response.data.main.temp;
+  celsiusTemperature = response.data.main.temp;
 
   tempElement.innerHTML = Math.round(response.data.main.temp);
   cityElement.innerHTML = response.data.name;
@@ -78,40 +78,19 @@ function displayForecast(response) {
   }
 }
 
-/*function cityName(event) {
-  event.preventDefault();
-  let searchValue = document.querySelector("#search-box-input");
-  let h1 = document.querySelector("h1");
-  h1.innerHTML = `${searchValue.value}`;
-  searchCity(searchValue.value);
-}
-
-let form = document.querySelector("#search-city");
-form.addEventListener("submit", cityName);
-
-function showCurrentTemperature(response) {
-  let temp = Math.round(response.data.main.temp);
-  let temperature = document.getElementById("calc-temp");
-  let location = document.getElementById("location");
-  temperature.innerHTML = temp;
-  location.innerHTML = response.data.name;
-}*/
-
-function searchCity(event) {
-  let cityName = document.querySelector("#search-box-input");
-
+function searchCity(city) {
   let apiKey = "5e39f9d1a00339cac657e6d5e124e87d";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
   axios.get(apiUrl).then(displayWeatherInfo);
-  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}&units=metric`;
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
 
 function submit(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#search-box-input");
-  search(cityInput.value);
+  searchCity(cityInput.value);
 }
 
 function currentLocation(position) {
@@ -120,24 +99,17 @@ function currentLocation(position) {
   let apiKey = "5e39f9d1a00339cac657e6d5e124e87d";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeatherInfo);
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
-navigator.geolocation.getCurrentPosition(currentLocation);
-/*
-function findCurrentLocation(event) {
+
+// function for the current Location Button
+
+function getCurrentLocation(event) {
   event.preventDefault();
-  let location = document.getElementById("location");
-  location.innerHTMl = "Location";
-  navigator.geolocation.getCurrentPosition(currentLocation, error);
+  navigator.geolocation.getCurrentPosition(currentLocation);
 }
 
-function error() {
-  let location = document.getElementById("location");
-  location.innerHTML = "Unable to retreive your location";
-}
-
-let currentButton = document.getElementById("search-current-temp");
-currentButton.addEventListener("click", findCurrentLocation);
-*/
 function tempFahrenheit(event) {
   event.preventDefault();
   let temperature = document.querySelector("#temperature");
@@ -169,3 +141,8 @@ celsiusLink.addEventListener("click", tempCelsius);
 
 let searchForm = document.querySelector("#search-city");
 searchForm.addEventListener("submit", submit);
+
+let currentLocationButton = document.querySelector("#search-current-temp");
+currentLocationButton.addEventListener("click", getCurrentLocation);
+
+searchCity("Neuhausen am Rheinfall");
