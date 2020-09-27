@@ -84,7 +84,7 @@ li {
 button.current {
   background-color: #81817ba2;
   display: block;
-  margin-top: auto;
+  margin-top: -25px;
   margin-left: auto;
   margin-right: auto;
   padding: 30x 28x;
