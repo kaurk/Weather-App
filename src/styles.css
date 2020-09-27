@@ -84,9 +84,9 @@ li {
 button.current {
   background-color: #81817ba2;
   display: block;
+  margin-top: auto;
   margin-left: auto;
   margin-right: auto;
-  /*border-radius: 15px;*/
   padding: 30x 28x;
   font-size: 20px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
@@ -101,4 +101,27 @@ footer {
 
 .weather-forcast {
   color: #33059e;
+  text-align: center;
+}
+
+#celsius-link {
+  color: #000000;
+  font-size: 25px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+#fahrenheit-link {
+  color: #000000;
+  font-size: 25px;
+}
+
+#search-current-temp:hover {
+  background: #008cff;
+  cursor: pointer;
+}
+
+#weather-description {
+  font-weight: 800;
+  color: #616863;
 }
